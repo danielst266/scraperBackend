@@ -7,11 +7,11 @@ namespace webapi.Controllers;
 [Route("[controller]")]
 public class PreemController : ControllerBase
 {   
-    private static PreemScraper scraper = new PreemScraper();
-
+    
     [HttpGet(Name = "[controller]")]
     public string Get()
-    {   
+
+    {   PreemScraper scraper = new PreemScraper();
         scraper.fetchData();
         return scraper.jsonData();
     }

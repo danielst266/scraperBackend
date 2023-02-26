@@ -7,13 +7,11 @@ namespace webapi.Controllers;
 [Route("[controller]")]
 public class CircleKController : ControllerBase
 {   
-    private static CircleKScraper scraper = new CircleKScraper();
-
-
-    
+   
     [HttpGet(Name = "[controller]")]
     public string Get()
     {   
+        CircleKScraper scraper = new CircleKScraper();
         scraper.fetchData();
         return scraper.jsonData();
     }

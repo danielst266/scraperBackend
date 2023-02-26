@@ -7,13 +7,11 @@ namespace webapi.Controllers;
 [Route("[controller]")]
 public class ST1Controller : ControllerBase
 {   
-    private static ST1Scraper scraper = new ST1Scraper();
-    
-
     
     [HttpGet(Name = "[controller]")]
     public string Get()
     {   
+        ST1Scraper scraper = new ST1Scraper();
         scraper.fetchData();
         return scraper.jsonData();
     }

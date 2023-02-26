@@ -7,13 +7,11 @@ namespace webapi.Controllers;
 [Route("[controller]")]
 public class IngoController : ControllerBase
 {   
-    private static IngoScraper scraper = new IngoScraper();
-
-
-    
+  
     [HttpGet(Name = "[controller]")]
     public string Get()
     {   
+        IngoScraper scraper = new IngoScraper();
         scraper.fetchData();
         return scraper.jsonData();
     }
